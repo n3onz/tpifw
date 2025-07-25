@@ -1,0 +1,75 @@
+{% comment %}
+
+	Name:
+
+		Default layout
+
+	Description:
+
+		Basic HTML foundation for all pages.
+
+	Example:
+
+		---
+		layout: default
+		---
+
+{% endcomment %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>TPIFW</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+		<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="{{ site.baseurl }}/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-gem"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>This Pod Is For Weirdos</h1>
+								<p>A morbi blandit ante natoque aliquet ut Commodo cep cubilia<br />
+								cep quam augue vel Feugiat Aliquam egestas.</p>
+							</div>
+						</div>
+						<nav>
+							<ul>
+								{% for panel in site.panels %}
+									<li><a href="#{{ panel.html_id }}">{{ panel.title }}</a></li>
+								{% endfor %}
+							</ul>
+						</nav>
+					</header>
+
+				{{ content }}
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy; Untitled.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/browser.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/breakpoints.min.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/util.js"></script>
+			<script src="{{ site.baseurl }}/assets/js/main.js"></script>
+
+	</body>
+</html>

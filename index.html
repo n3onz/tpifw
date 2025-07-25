@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% comment %}
+
+	Name:
+
+		Homepage
+
+	Description:
+
+		Main page.
+
+{% endcomment %}
+
+<!-- Main -->
+	<div id="main">
+
+		{% for panel in site.panels %}
+			<article id="{{ panel.html_id }}">
+				{{ panel.output }}
+			</article>
+		{% endfor %}
+
+	</div>
